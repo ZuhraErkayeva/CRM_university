@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="{% static 'css/font-face.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/font-awesome-5/css/fontawesome-all.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/bootstrap-4.1/bootstrap.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/animsition/animsition.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/wow/animate.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/slick/slick.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+
+</head>
+<body class="animsition">
+    <div class="page-wrapper">
+    <!-- MENU SIDEBAR -->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a href="#">
+                <!-- Replace with your logo image -->
+                <img src="{% static 'images/icon/logo.png' %}" alt="Cool Admin" />
+            </a>
+        </div>
+        <div class="menu-sidebar__content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li class="active">
+                        <a href="{% url 'home' %}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'faculty_list' %}"><i class="fas fa-chart-bar"></i>Faculty</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'department_list' %}"><i class="fas fa-chart-bar"></i>Department</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'subject_list' %}"><i class="fas fa-chart-bar"></i>Subject</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'teacher_list' %}"><i class="fas fa-chart-bar"></i>Teacher</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'group_list' %}"><i class="fas fa-chart-bar"></i>Group</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'student_list' %}"><i class="fas fa-chart-bar"></i>Student</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <!-- END MENU SIDEBAR -->
+    <div class="page-container">
+        <!-- Include the user bar -->
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <div class="header-button">
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <img src="{% static 'images/icon/avatar-01.jpg' %}" alt="John Doe" />
+                                    </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" href="#">John Doe</a>
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
+                                        <div class="info clearfix">
+                                            <div class="image">
+                                                <a href="#">
+                                                    <img src="{% static 'images/icon/avatar-01.jpg' %}" alt="John Doe" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="name">
+                                                    <a href="#">John Doe</a>
+                                                </h5>
+                                                <span class="email">johndoe@example.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__body">
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-account"></i>Account</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-settings"></i>Setting</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__footer">
+                                            <a href="logout.html">
+                                                <i class="zmdi zmdi-power"></i>Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- HEADER DESKTOP-->
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="overview-wrap">
+                                <h2 class="title-1">Overview</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-t-25">
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="overview-item overview-item--c1">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="fa fa-book"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>{{ faculty_count }}</h2>
+                                            <span>Faculty</span>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <!-- Chart placeholder -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="overview-item overview-item--c2">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="fa fa-bank"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>{{department_count}}</h2>
+                                            <span>Department</span>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <!-- Chart placeholder -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="overview-item overview-item--c3">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-calendar-note"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>{{subject_count}}</h2>
+                                            <span>Subject</span>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <!-- Chart placeholder -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-t-25">
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="overview-item overview-item--c1">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-account-o"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>{{teacher_count}}</h2>
+                                            <span>Teachers</span>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <!-- Chart placeholder -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="overview-item overview-item--c2">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-shopping-cart"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>{{group_count}}</h2>
+                                            <span>Groups</span>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <!-- Chart placeholder -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="overview-item overview-item--c3">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-calendar-note"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>{{student_count}}</h2>
+                                            <span>Students</span>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <!-- Chart placeholder -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="au-card m-b-30">
+                                <div class="au-card-inner">
+                                    <h3 class="title-2 m-b-40">Single Bar Chart</h3>
+                                    <canvas id="singelBarChart1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="au-card m-b-30">
+                                <div class="au-card-inner">
+                                    <h3 class="title-2 m-b-40">Pie Chart</h3>
+                                    <canvas id="pieChart1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
+    </div>
+</div>
+    <script>
+        (function ($) {
+            try {
+                // Your Chart.js code here
+                // Example:
+                var ctx = document.getElementById("singelBarChart1");
+                if (ctx) {
+                    ctx.height = 150;
+                    var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                            datasets: [
+                                {
+                                    label: "Groups",
+                                    data: [40, 55, 75, 81, 56, 55, 40],
+                                    borderColor: "rgba(0, 123, 255, 0.9)",
+                                    borderWidth: "0",
+                                    backgroundColor: "rgba(0, 123, 255, 0.5)"
+                                }
+                            ]
+                        },
+                        options: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    fontFamily: 'Poppins'
+                                }
+                            },
+                            scales: {
+                                xAxes: [{
+                                    ticks: {
+                                        fontFamily: "Poppins"
+                                    }
+                                }],
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true,
+                                        fontFamily: "Poppins"
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                }
+            } catch (error) {
+                console.log(error);
+            }
+
+            try {
+                // Your pie chart code here
+                // Example:
+                var ctx = document.getElementById("pieChart1");
+                if (ctx) {
+                    ctx.height = 200;
+                    var myChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            datasets: [{
+                                data: [45, 25, 20, 10],
+                                backgroundColor: [
+                                    "#4c84ff",
+                                    "#feb019",
+                                    "#ea0e60",
+                                    "#26c6da"
+                                ],
+                                hoverBackgroundColor: [
+                                    "#4c84ff",
+                                    "#feb019",
+                                    "#ea0e60",
+                                    "#26c6da"
+                                ]
+                            }],
+                            labels: [
+                                "Group A",
+                                "Group B",
+                                "Group C",
+                                "Group D"
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            legend: {
+                                position: 'right',
+                                labels: {
+                                    fontFamily: 'Poppins'
+                                }
+                            },
+                            animation: {
+                                animateScale: true,
+                                animateRotate: true
+                            }
+                        }
+                    });
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        })(jQuery);
+</script>
+    <!-- Jquery JS -->
+    <script src="{% static 'vendor/jquery-3.2.1.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'vendor/bootstrap-4.1/popper.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap-4.1/bootstrap.min.js' %}"></script>
+    <!-- Vendor JS -->
+    <script src="{% static 'vendor/slick/slick.min.js' %}"></script>
+    <script src="{% static 'vendor/wow/wow.min.js' %}"></script>
+    <script src="{% static 'vendor/animsition/animsition.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+    <script src="{% static 'vendor/counter-up/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'vendor/counter-up/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>
+    <script src="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'vendor/chartjs/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
