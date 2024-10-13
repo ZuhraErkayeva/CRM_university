@@ -7,18 +7,51 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        .container {
+            text-align: center; /* Center text in container */
+        }
+        .btn-container {
+            display: flex; /* Use flexbox for button layout */
+            justify-content: center; /* Center buttons */
+            margin-top: 50px; /* Add margin at the top */
+        }
+        .btn {
+            padding: 10px 20px; /* Add padding to make buttons larger */
+            margin-left: 10px; /* Space between buttons */
+            font-size: 16px; /* Increase font size */
+            border-radius: 5px; /* Rounded corners */
+            border: none; /* Remove default border */
+            cursor: pointer; /* Change cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        .btn-danger {
+            background-color: #dc3545; /* Red background */
+            color: white; /* White text */
+        }
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+        .btn-secondary {
+            background-color: #6c757d; /* Grey background */
+            color: white; /* White text */
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268; /* Darker grey on hover */
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Are you to delete this  {{ department.name }}</h1>
-        <div class="btn-container">
-            <form method="post" style="display:inline">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Yes</button>
-            </form>
-            <a href="{% url 'department_list' %}" class="btn btn-secondary">No</a>
-            </div>
+<div class="container">
+    <h1>Are you to delete this {{ department.name }}</h1>
+    <div class="btn-container">
+        <form method="post" style="display:inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Yes</button>
+        </form>
+        <a href="{% url 'department_list' %}" class="btn btn-secondary">No</a>
     </div>
+</div>
 </body>
 </html>

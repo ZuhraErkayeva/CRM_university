@@ -3,10 +3,12 @@ from . import views
 # app_name = 'university'
 urlpatterns = [
     path('', views.home, name='home'),
+
     path('faculties/', views.faculty_list, name='faculty_list'),
     path('faculties/create/', views.faculty_create, name='faculty_form'),
     path('faculties/<int:pk>/update/', views.faculty_update, name='faculty_update'),
     path('faculties/<int:pk>/delete/', views.faculty_delete, name='faculty_delete'),
+
 
     path('groups/', views.group_list, name='group_list'),
     path('groups/create/', views.group_create, name='group_create'),

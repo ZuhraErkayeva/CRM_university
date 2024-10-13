@@ -34,12 +34,12 @@ def faculty_create(request):
         form = FacultyForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('faculty_list')
-        else:
-            return HttpResponse("Form is invalid.")
-    form = FacultyForm()
-    ctx = {'faculty': form}
-    return render(request, 'faculty_form.html', ctx)
+            return redirect('faculty_list')  # Redirect to the faculty list after creation
+    else:
+        form = FacultyForm()
+
+    # Do not pass 'faculty' to the template in the create view
+    return render(request, 'faculty_form.html', {'form': form})
 
 
 def faculty_update(request, pk):
@@ -51,7 +51,7 @@ def faculty_update(request, pk):
             return redirect('faculty_list')
     else:
         form = FacultyForm(instance=faculty)
-    return render(request, 'faculty_form.html', {'form': form})
+    return render(request, 'faculty_form.html', {'form': form, 'faculty': faculty})
 
 
 def faculty_delete(request, pk):
@@ -88,7 +88,7 @@ def group_update(request, pk):
             return redirect('group_list')
     else:
         form = GroupForm(instance=group)
-    return render(request, 'group_form.html', {'form': form})
+    return render(request, 'group_form.html', {'form': form, 'group': group})
 
 
 def group_delete(request, pk):
@@ -125,7 +125,7 @@ def department_update(request, pk):
             return redirect('department_list')
     else:
         form = DepartmentForm(instance=department)
-    return render(request, 'department_form.html', {'form': form})
+    return render(request, 'department_form.html', {'form': form, 'department': department})
 
 
 def department_delete(request, pk):
@@ -162,7 +162,7 @@ def subject_update(request, pk):
             return redirect('subject_list')
     else:
         form = SubjectForm(instance=subject)
-    return render(request, 'subject_form.html', {'form': form})
+    return render(request, 'subject_form.html', {'form': form, 'subject': subject})
 
 
 def subject_delete(request, pk):
@@ -199,7 +199,7 @@ def teacher_update(request, pk):
             return redirect('teacher_list')
     else:
         form = TeacherForm(instance=teacher)
-    return render(request, 'teacher_form.html', {'form': form})
+    return render(request, 'teacher_form.html', {'form': form, 'teacher': teacher})
 
 
 def teacher_delete(request, pk):
@@ -236,7 +236,7 @@ def student_update(request, pk):
             return redirect('student_list')
     else:
         form = StudentForm(instance=student)
-    return render(request, 'student_form.html', {'form': form})
+    return render(request, 'student_form.html', {'form': form, 'student': student})
 
 
 def student_delete(request, pk):

@@ -143,13 +143,15 @@
                                     <small> Form </small>
                                 </div>
                                 <div class="card-body card-block">
-                                    <form method="post" action="{% url 'department_create' %}">
+                                    <form method="post" action="{% if department %}{% url 'department_update' pk=department.pk %}{% else %}{% url 'department_create' %}{% endif %}">
                                         {% csrf_token %}
                                         <div class="form-group">
                                             {{ form.as_p }}
                                         </div>
 
-                                        <button type="submit" class="btn btn-success btn-md">Add</button>
+                                        <button type="submit" class="btn btn-success btn-md">
+                                            {% if department %} Update {% else %} Add {% endif %}
+                                        </button>
                                     </form>
                                 </div>
 
