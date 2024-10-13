@@ -38,7 +38,7 @@
                 <img src="{% static 'images/icon/logo.png' %}" alt="Cool Admin"/>
             </a>
         </div>
-        <div class="menu-sidebar__content js-scrollbar1">
+        <div class="menu-sidebar__content js-scrollbar1" style="background:#81d3e7">
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
                     <li class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
@@ -54,13 +54,13 @@
                         <a href="{% url 'subject_list' %}"><i class="fas fa-book"></i>Subject</a>
                     </li>
                     <li>
-                        <a href="{% url 'teacher_list' %}"><i class="fas fa-chalkboard-teacher"></i>Teacher</a>
+                        <a href="{% url 'teacher_list' %}"><i class="fas fa-chart-bar"></i>Teacher</a>
                     </li>
                     <li>
                         <a href="{% url 'group_list' %}"><i class="fas fa-users"></i>Group</a>
                     </li>
                     <li>
-                        <a href="{% url 'student_list' %}"><i class="fas fa-user-graduate"></i>Student</a>
+                        <a href="{% url 'student_list' %}"><i class="fas fa-chart-bar"></i>Student</a>
                     </li>
                 </ul>
             </nav>

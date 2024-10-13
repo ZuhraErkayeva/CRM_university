@@ -26,6 +26,57 @@
 
     <!-- Main CSS -->
     <link href="{% static 'css/theme.css' %}" rel="stylesheet" media="all">
+    <style>
+        .menu-sidebar {
+    background-color: aqua;
+    color: white;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
+.navbar-sidebar {
+    padding: 20px 0;
+}
+
+.navbar__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar__list li {
+    padding: 10px 15px;
+}
+
+.navbar__list li.active a {
+    background-color: #007bff;
+    color: white;
+}
+
+.navbar__list li a {
+    color: white; /* Default text color */
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center align items */
+}
+
+.navbar__list li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+    color: white; /* Maintain text color on hover */
+}
+
+.navbar__list li a i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+    </style>
 </head>
 
 <body class="animsition">
@@ -38,7 +89,7 @@
                 <img src="{% static 'images/icon/logo.png' %}" alt="Cool Admin"/>
             </a>
         </div>
-        <div class="menu-sidebar__content js-scrollbar1">
+        <div class="menu-sidebar__content js-scrollbar1" style="background:#81d3e7">
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
                     <li class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
@@ -54,13 +105,13 @@
                         <a href="{% url 'subject_list' %}"><i class="fas fa-book"></i>Subject</a>
                     </li>
                     <li>
-                        <a href="{% url 'teacher_list' %}"><i class="fas fa-chalkboard-teacher"></i>Teacher</a>
+                        <a href="{% url 'teacher_list' %}"><i class="fas fa-chart-bar"></i>Teacher</a>
                     </li>
                     <li>
                         <a href="{% url 'group_list' %}"><i class="fas fa-users"></i>Group</a>
                     </li>
                     <li>
-                        <a href="{% url 'student_list' %}"><i class="fas fa-user-graduate"></i>Student</a>
+                        <a href="{% url 'student_list' %}"><i class="fas fa-chart-bar"></i>Student</a>
                     </li>
                 </ul>
             </nav>

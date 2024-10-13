@@ -1,8 +1,7 @@
 from django.urls import path
 from . import views
-# app_name = 'university'
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('home/', views.home, name='home'),
 
     path('faculties/', views.faculty_list, name='faculty_list'),
     path('faculties/create/', views.faculty_create, name='faculty_form'),
@@ -34,4 +33,5 @@ urlpatterns = [
     path('students/create/', views.student_create, name='student_create'),
     path('students/<int:pk>/update/', views.student_update, name='student_update'),
     path('students/<int:pk>/delete/', views.student_delete, name='student_delete'),
+
 ]

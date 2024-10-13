@@ -245,3 +245,4 @@ def student_delete(request, pk):
         student.delete()
         return redirect('student_list')
     return render(request, 'student_confirm.html', {'student': student})
+
